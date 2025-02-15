@@ -1,0 +1,20 @@
+""" Triton bazel module
+"""
+
+bazel_dep(name = "rules_cc", version = "0.1.1")
+bazel_dep(name = "platforms", version = "0.0.10")
+
+# https://github.com/hedronvision/bazel-compile-commands-extractor
+bazel_dep(name = "hedron_compile_commands", dev_dependency = True)
+
+register_toolchains(
+    "//toolchain:cc_toolchain_for_windows_llvm_x86_64",
+    "//toolchain:cc_toolchain_for_osx_llvm_x86_64",
+    "//toolchain:cc_toolchain_for_linux_llvm_x86_64",
+)
+
+git_override(
+    module_name = "hedron_compile_commands",
+    remote = "https://github.com/hedronvision/bazel-compile-commands-extractor.git",
+    commit = "4f28899228fb3ad0126897876f147ca15026151e",
+)
