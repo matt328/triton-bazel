@@ -1,0 +1,16 @@
+---
+Checks: "*,-llvmlibc-*, -fuchsia-*, -altera-*, -llvm-*, -google-readability-namespace-comments, -misc-no-recursion, -misc-include-cleaner, -hicpp-uppercase-literal-suffix, -readability-uppercase-literal-suffix, -readability-identifier-length, -cppcoreguidelines-pro-type-union-access"
+WarningsAsErrors: "true"
+HeaderFilterRegex: ""
+FormatStyle: google
+CheckOptions:
+  - key: google-readability-braces-around-statements.ShortStatementLines
+    value: "1"
+  - key: google-readability-function-size.StatementThreshold
+    value: "800"
+  - key: google-readability-namespace-comments.ShortNamespaceLines
+    value: "10"
+  - key: google-readability-namespace-comments.SpacesBeforeComments
+    value: "2"
+  - key: modernize-use-nullptr.NullMacros
+    value: "NULL"

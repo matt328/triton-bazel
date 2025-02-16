@@ -1,2 +1,5 @@
 # Enable Bzlmod
 common --enable_bzlmod
+
+# Move bazel's stuff into 'build'
+common --symlink_prefix=build/

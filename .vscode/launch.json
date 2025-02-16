@@ -2,17 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "lldb-dap",
-      "request": "launch",
-      "name": "(DAP) Launch)",
-      "stopOnEntry": false,
-      "program": "${workspaceFolder}/bazel-bin/util-lib/util-lib_linux",
-      "args": [],
-      "env": [],
-      "cwd": "${workspaceRoot}"
-    },
-    {
-      "name": "(gdb) Launch",
+      "name": "util-lib - Linux",
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/bazel-bin/util-lib/util-lib_linux",
@@ -36,16 +26,7 @@
       ]
     },
     {
-      "type": "lldb",
-      "request": "launch",
-      "stopOnEntry": false,
-      "name": "(LLDB) Launch",
-      "program": "${workspaceFolder}/bazel-bin/util-lib/util-lib_linux",
-      "args": [],
-      "cwd": "${workspaceFolder}"
-    },
-    {
-      "name": "util-lib (Windows)",
+      "name": "util-lib - Windows",
       "type": "cppvsdbg",
       "request": "launch",
       "program": "${workspaceRoot}\\bazel-bin\\util-lib\\util-lib.exe",

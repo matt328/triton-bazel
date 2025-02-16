@@ -4,14 +4,13 @@
 
 int main() {
 
-  std::vector<int> v = {1, 2, 3, 4, 5};
+  std::vector<int> v = {1, 2, 3, 4};
 
-  // Use a C++23 feature: std::ranges::to to convert a range into a container.
+  // Use a C++23 feature to test toolchains
   auto result = v | std::ranges::views::transform([](int i) { return i * 2; }) |
                 std::ranges::to<std::vector>();
 
-  // Print the transformed vector.
-  for (const auto &num : result) {
+  for (const auto& num : result) {
     std::cout << num << " ";
   }
 
