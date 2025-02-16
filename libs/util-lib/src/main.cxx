@@ -1,8 +1,26 @@
 #include <iostream>
 #include <ranges>
+#include <utility>
 #include <vector>
+#include <spdlog/spdlog.h>
 
-int main() {
+#include "Logger2.hpp"
+#include "BaseException.hpp"
+
+class MyException : public tr::BaseException {
+public:
+  explicit MyException(std::string msg) : tr::BaseException(std::move(msg)) {
+  }
+};
+
+auto main() -> int {
+
+  const auto debugLevel = spdlog::level::level_enum::trace;
+  const auto releaseLevel = spdlog::level::level_enum::trace;
+
+  initLogger(debugLevel, releaseLevel);
+
+  Log.debug("Hello from spdlog");
 
   std::vector<int> v = {1, 2, 3, 4};
 
@@ -13,6 +31,10 @@ int main() {
   for (const auto& num : result) {
     std::cout << num << " ";
   }
+
+  try {
+    throw MyException{"oops"};
+  } catch (const tr::BaseException& ex) { Log.error(ex.what()); }
 
   std::cout << "Hello world" << '\n';
   return 0;

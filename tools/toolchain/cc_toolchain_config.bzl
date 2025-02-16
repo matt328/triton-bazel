@@ -100,7 +100,7 @@ def _impl(ctx):
         cxx_builtin_include_directories = [
             "C:/Program Files/LLVM/lib/clang/18/include",
             "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.41.34120/include",
-            "C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/ucrt",
+            "C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0",
         ],
         toolchain_identifier = "k8-toolchain",
         host_system_name = "local",
